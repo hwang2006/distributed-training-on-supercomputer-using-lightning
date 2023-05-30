@@ -116,3 +116,20 @@ Thank you for installing Miniconda3!
 [glogin01]$ conda --version
 conda 4.12.0
 ```
+
+## Installing Pytorch Lightning
+Now you are ready to build Horovod as a conda virtual environment: 
+1. load modules: 
+```
+module load gcc/10.2.0 cuda/11.7
+```
+2. create a new conda virtual environment and activate the environment:
+```
+[glogin01]$ conda create -n lightning
+[glogin01]$ conda activate lightning
+```
+3. install the pytorch and lightning package:
+```
+(lightning) [glogin01]$ conda install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.7 -c pytorch -c nvidia
+(lightning) [glogin01]$ pip install lightning
+```
