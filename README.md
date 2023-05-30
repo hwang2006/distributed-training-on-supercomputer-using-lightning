@@ -6,6 +6,7 @@ This repository is intended to guide users to run their pytorch lightning codes 
 * [KISTI Neuron GPU Cluster](#kisti-neuron-gpu-cluster)
 * [Installing Conda](#installing-conda)
 * [Installing Pytorch Lightning](#installing-pytorch-lightning)
+* [Running Jupyter](#running-jupyter)
 
 
 ## KISTI Neuron GPU Cluster
@@ -162,7 +163,7 @@ In order to do so, you need to add the horovod-enabled virtual envrionment that 
 3. add the virtual environment as a jupyter kernel:
 ```
 (lightning) [glogin01]$ pip install ipykernel 
-(lightning) [glogin01]$ python -m ipykernel install --user --name horovod
+(lightning) [glogin01]$ python -m ipykernel install --user --name lightning
 ```
 4. check the list of kernels currently installed:
 ```
