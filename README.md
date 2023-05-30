@@ -5,6 +5,7 @@ This repository is intended to guide users to run their pytorch lightning codes 
 **Contents**
 * [KISTI Neuron GPU Cluster](#kisti-neuron-gpu-cluster)
 * [Installing Conda](#installing-conda)
+* [Installing Pytorch Lightning](#installing-pytorch-lightning)
 
 
 ## KISTI Neuron GPU Cluster
