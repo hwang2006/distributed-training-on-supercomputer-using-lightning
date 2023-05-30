@@ -1,1 +1,1 @@
-# running-pytorch-lightning-on-supercomputer
+# running-pytorch-lightning-on-GPU-cluster
