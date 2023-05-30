@@ -133,3 +133,12 @@ module load gcc/10.2.0 cuda/11.7
 (lightning) [glogin01]$ conda install pytorch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0 pytorch-cuda=11.7 -c pytorch -c nvidia
 (lightning) [glogin01]$ pip install lightning
 ```
+4. check if the pytorch lightning package were installed:
+```
+(lightning) [glogin01]$ conda list | grep lightning
+# packages in environment at /scratch/$USER/miniconda3/envs/lightning:
+lightning                 2.0.2                    pypi_0    pypi
+lightning-cloud           0.5.36                   pypi_0    pypi
+lightning-utilities       0.8.0                    pypi_0    pypi
+pytorch-lightning         2.0.2                    pypi_0    pypi
+```
