@@ -253,3 +253,7 @@ URL Address: localhost:8888
 Password or token: $USER    # your account ID on Neuron
 ```
 <p align="center"><img src="https://user-images.githubusercontent.com/84169368/218938419-f38c356b-e682-4b1c-9add-6cfc29d53425.png"/></p> 
+
+## Introduction to Pytorch Lightning on Jupyter Noteboook
+Now, you are ready to run a pytorch lightning code on a jupyter notebook. Hopefully, this jupyter notebook example leads to being familiarized yourself to the basics of pytorch lightning framework step-by-step.
+
