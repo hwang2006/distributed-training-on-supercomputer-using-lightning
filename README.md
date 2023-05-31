@@ -259,6 +259,54 @@ Password or token: $USER    # your account ID on Neuron
 Now, you are ready to run a pytorch lightning code on a jupyter notebook. Hopefully, the jupyter notebook examples would lead to getting familiarized yourself to the basics of pytorch lightning coding practices step-by-step. Please refer to the [notebooks](https://github.com/hwang2006/distributed-training-with-pytorch-lightning/tree/main/notebooks) directory for example codes.
 * [Link to Jupyter Notebook Examples](https://nbviewer.org/github/hwang2006/distributed-training-with-pytorch-lightning/blob/main/notebooks/pytorch_lightning_example.ipynb)
 
+## Running Pytorch Lightning
+We will show how to run a simple pytorch lightning code on multiple nodes interactively.
+1. request allocation of available GPU-nodes:
+```
+[glogin01]$ salloc --partition=amd_a100nv_8 -J debug --nodes=2 --time=8:00:00 --gres=gpu:4 --comment=python
+salloc: Granted job allocation 154173
+salloc: Waiting for resource configuration
+salloc: Nodes gpu[32-33] are ready for job
+```
+2. load modules and activate the lightning conda environment:
+```
+[gpu32]$ module load gcc/10.2.0 cuda/11.7
+[gpu32]$ $ conda activate lightning
+(lightning) [gpu32]$
+```
+3. run a pytorch lightning code:
+- to run on the two nodes with 4 GPUs each. Pytorch Lightning complains and exits with some runtime error messages when using "srun" with the -n or --ntasks options, so you need to use --ntasks-per-node instead.
+```
+(lighting) [gpu32]$ srun -N 2 --ntasks-per-node=4 python distributed-training-with-pytorch-lightning/src/pytorch_mnist_lightning.py --num_nodes 2
+```
+- to run the Bert NSMC (Naver Sentiment Movie Corpus) example in the src/pytorch-lightning directory, you need to install two additional packages (i.e., emoji and soynlp) and download the nsmc datasets, for example, using git cloning
+```
+(lightning) [gpu32]$ pip install emoji==1.7.0 soynlp
+(lightning) [gpu32]$ git clone https://github.com/e9t/nsmc  # download the nsmc datasets in the ./nsmc directory
+(horovod) [gpu32]$ srun -N 2 --ntasks-per-node=4 python distributed-training-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2
+```
+- to run on the two nodes with 2 GPUs each
+```
+(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=2 python distributed-training-with-pytorch-lightning/src/pytorch_mnist_lightning.py --num_nodes 2 --devices 2
+(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=2 python distributed-training-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2 --devices 2
+```
+- to run on the two nodes with 1 GPU each
+```
+(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=1 python distributed-training-with-pytorch-lightning/src/pytorch_mnist_lightning.py --num_nodes 2 --devices 1
+(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=1 python distributed-training-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2 --devices 1
+```
+- to run one node with 4 GPUs
+```
+(lightning) [gpu32]$ python distributed-training-with-pytorch-lightning/src/pytorch_mnist_lightning.py
+(lightning) [gpu32]$ python distributed-training-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py
+```
+- to run one node with 2 GPUs
+```
+(lightning) [gpu32]$ python distributed-training-with-pytorch-lightning/src/pytorch_mnist_lightning.py --devices 2
+(lightning) [gpu32]$ python distributed-training-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --devices 2
+```
+
+
 
 
 
