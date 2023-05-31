@@ -8,7 +8,7 @@ This repository is intended to guide users to run their pytorch lightning codes 
 * [Installing Pytorch Lightning](#installing-pytorch-lightning)
 * [Running Jupyter](#running-jupyter)
 * [Pytorch Lightning Examples on Jupyter](#pytorch-lightning-examples-on-jupyter) 
-
+* [Running Pytorch Lightning](#running-pytorch-lightning)
 
 ## KISTI Neuron GPU Cluster
 Neuron is a KISTI GPU cluster system consisting of 65 nodes with 260 GPUs (120 of NVIDIA A100 GPUs and 140 of NVIDIA V100 GPUs). [Slurm](https://slurm.schedmd.com/) is adopted for cluster/resource management and job scheduling.
