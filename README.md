@@ -250,11 +250,15 @@ Password:
 ```
 7. open a web browser on your PC or laptop to access the jupyter server
 ```
-URL Address: localhost:8888
+URL Address: localhost:8888e
 Password or token: $USER    # your account ID on Neuron
 ```
 <p align="center"><img src="https://user-images.githubusercontent.com/84169368/218938419-f38c356b-e682-4b1c-9add-6cfc29d53425.png"/></p> 
 
 ## Introduction to Pytorch Lightning
-Now, you are ready to run a pytorch lightning code on a jupyter notebook. Hopefully, this jupyter notebook example leads to being familiarized yourself to the basics of pytorch lightning framework step-by-step.
+Now, you are ready to run a pytorch lightning code on a jupyter notebook. Hopefully, the jupyter notebook examples would lead to getting familiarized yourself to the basics of pytorch lightning coding practices step-by-step.
+* [link to jupyter notebook examples](https://nbviewer.org/github/hwang2006/distributed-training-with-pytorch-lightning/blob/main/notebooks/pytorch_lightning_example.ipynb)
+
+
+
 
