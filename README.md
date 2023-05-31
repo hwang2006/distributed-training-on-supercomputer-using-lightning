@@ -7,7 +7,7 @@ This repository is intended to guide users to run their pytorch lightning codes 
 * [Installing Conda](#installing-conda)
 * [Installing Pytorch Lightning](#installing-pytorch-lightning)
 * [Running Jupyter](#running-jupyter)
-* [Introduction to Pytorch Lightning](#introduction-to-pytorch-lightning) 
+* [Pytorch Lightning Simple Examples on Jupyter Notebook](#pytorch-lightning-simple-examples-on-jupyter-notebook) 
 
 
 ## KISTI Neuron GPU Cluster
@@ -255,7 +255,7 @@ Password or token: $USER    # your account ID on Neuron
 ```
 <p align="center"><img src="https://user-images.githubusercontent.com/84169368/218938419-f38c356b-e682-4b1c-9add-6cfc29d53425.png"/></p> 
 
-## Introduction to Pytorch Lightning
+## Pytorch Lightning Simple Examples on Jupyter Notebook
 Now, you are ready to run a pytorch lightning code on a jupyter notebook. Hopefully, the jupyter notebook examples would lead to getting familiarized yourself to the basics of pytorch lightning coding practices step-by-step.
 * [Link to Jupyter Notebook Example](https://nbviewer.org/github/hwang2006/distributed-training-with-pytorch-lightning/blob/main/notebooks/pytorch_lightning_example.ipynb)
 
