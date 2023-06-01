@@ -9,6 +9,7 @@ This repository is intended to guide users to run their pytorch lightning codes 
 * [Running Jupyter](#running-jupyter)
 * [Pytorch Lightning Examples on Jupyter](#pytorch-lightning-examples-on-jupyter) 
 * [Running Pytorch Lightning on SLURM](#running-pytorch-lightning-on-slurm)
+* [References](#references)
 
 ## KISTI Neuron GPU Cluster
 Neuron is a KISTI GPU cluster system consisting of 65 nodes with 260 GPUs (120 of NVIDIA A100 GPUs and 140 of NVIDIA V100 GPUs). [Slurm](https://slurm.schedmd.com/) is adopted for cluster/resource management and job scheduling.
@@ -307,6 +308,9 @@ salloc: Nodes gpu[32-33] are ready for job
 (lightning) [gpu32]$ python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --devices 2
 (lightning) [gpu32]$ srun -N 1 --ntasks-per-node=2 python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --devices 2
 ```
+
+## References
+* [Distributed training with Pytorch Lightning on NERSC perlmulter supercomputer in LBNL](https://github.com/hwang2006/distributed-training-on-perlmutter-with-pytorch-lightning)
 
 
 
