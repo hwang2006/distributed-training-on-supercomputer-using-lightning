@@ -8,7 +8,7 @@ This repository is intended to guide users to run their pytorch lightning codes 
 * [Installing Pytorch Lightning](#installing-pytorch-lightning)
 * [Running Jupyter](#running-jupyter)
 * [Pytorch Lightning Examples on Jupyter](#pytorch-lightning-examples-on-jupyter) 
-* [Running Pytorch Lightning](#running-pytorch-lightning)
+* [Running Pytorch Lightning on SLURM](#running-pytorch-lightning-on-slurm)
 
 ## KISTI Neuron GPU Cluster
 Neuron is a KISTI GPU cluster system consisting of 65 nodes with 260 GPUs (120 of NVIDIA A100 GPUs and 140 of NVIDIA V100 GPUs). [Slurm](https://slurm.schedmd.com/) is adopted for cluster/resource management and job scheduling.
@@ -259,7 +259,7 @@ Password or token: $USER    # your account ID on Neuron
 Now, you are ready to run a pytorch lightning code on a jupyter notebook. Hopefully, the jupyter notebook examples would lead to getting familiarized yourself to the basics of pytorch lightning coding practices step-by-step. Please refer to the [notebooks](https://github.com/hwang2006/distributed-training-with-pytorch-lightning/tree/main/notebooks) directory for example codes.
 * [Link to Jupyter Notebook Examples](https://nbviewer.org/github/hwang2006/distributed-training-with-pytorch-lightning/blob/main/notebooks/pytorch_lightning_example.ipynb)
 
-## Running Pytorch Lightning
+## Running Pytorch Lightning on SLURM
 We will show how to run a simple pytorch lightning code on multiple nodes interactively.
 1. request allocation of available GPU-nodes:
 ```
