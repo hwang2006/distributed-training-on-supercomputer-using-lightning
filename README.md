@@ -283,7 +283,7 @@ salloc: Nodes gpu[32-33] are ready for job
 ```
 (lightning) [gpu32]$ pip install emoji==1.7.0 soynlp transformers pandas
 (lightning) [gpu32]$ git clone https://github.com/e9t/nsmc  # download the nsmc datasets in the ./nsmc directory
-(horovod) [gpu32]$ srun -N 2 --ntasks-per-node=4 python distributed-training-on-supercomputer-using-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2
+(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=4 python distributed-training-on-supercomputer-using-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2
 ```
 - to run on the two nodes with 2 GPUs each
 ```
