@@ -279,7 +279,7 @@ salloc: Nodes gpu[32-33] are ready for job
 ```
 (lighting) [gpu32]$ srun -N 2 --ntasks-per-node=4 python distributed-training-on-supercomputer-with-pytorch-lightning/src/pytorch_mnist_lightning.py --num_nodes 2
 ```
-- to run the Bert NSMC (Naver Sentiment Movie Corpus) example in the src directory, you might need to install additional packages (i.e., emoji, soynlp, transformers, pandas) and download the nsmc datasets, for example, using git cloning
+- to run the Bert NSMC (Naver Sentiment Movie Corpus) example in the [src](https://github.com/hwang2006/distributed-training-on-supercomputer-with-pytorch-lightning/tree/main/src) directory, you might need to install additional packages (i.e., emoji, soynlp, transformers, pandas) and download the nsmc datasets, for example, using git cloning
 ```
 (lightning) [gpu32]$ pip install emoji==1.7.0 soynlp transformers pandas
 (lightning) [gpu32]$ git clone https://github.com/e9t/nsmc  # download the nsmc datasets in the ./nsmc directory
