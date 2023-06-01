@@ -299,11 +299,13 @@ salloc: Nodes gpu[32-33] are ready for job
 ```
 (lightning) [gpu32]$ python distributed-training-with-pytorch-lightning/src/pytorch_mnist_lightning.py
 (lightning) [gpu32]$ python distributed-training-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py
+(lightning) [gpu32]$ srun -N 1 --ntasks-per-node=4 python distributed-training-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py
 ```
 - to run one node with 2 GPUs
 ```
 (lightning) [gpu32]$ python distributed-training-with-pytorch-lightning/src/pytorch_mnist_lightning.py --devices 2
 (lightning) [gpu32]$ python distributed-training-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --devices 2
+(lightning) [gpu32]$ srun -N 1 --ntasks-per-node=2 python distributed-training-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --devices 2
 ```
 
 
