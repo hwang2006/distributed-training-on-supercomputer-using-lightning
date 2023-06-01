@@ -277,35 +277,35 @@ salloc: Nodes gpu[32-33] are ready for job
 3. run a pytorch lightning code:
 - to run on the two nodes with 4 GPUs each. Pytorch Lightning complains and exits with some runtime error messages when using "srun" with the -n or --ntasks options, so you need to use --ntasks-per-node instead.
 ```
-(lighting) [gpu32]$ srun -N 2 --ntasks-per-node=4 python distributed-training-on-supercomputer-using-lightning/src/pytorch_mnist_lightning.py --num_nodes 2
+(lighting) [gpu32]$ srun -N 2 --ntasks-per-node=4 python distributed-training-on-supercomputer-with-pytorch-lightning/src/pytorch_mnist_lightning.py --num_nodes 2
 ```
 - to run the Bert NSMC (Naver Sentiment Movie Corpus) example in the src directory, you might need to install additional packages (i.e., emoji, soynlp, transformers, pandas) and download the nsmc datasets, for example, using git cloning
 ```
 (lightning) [gpu32]$ pip install emoji==1.7.0 soynlp transformers pandas
 (lightning) [gpu32]$ git clone https://github.com/e9t/nsmc  # download the nsmc datasets in the ./nsmc directory
-(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=4 python distributed-training-on-supercomputer-using-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2
+(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=4 python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2
 ```
 - to run on the two nodes with 2 GPUs each
 ```
-(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=2 python distributed-training-on-supercomputer-using-lightning/src/pytorch_mnist_lightning.py --num_nodes 2 --devices 2
-(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=2 python distributed-training-on-supercomputer-using-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2 --devices 2
+(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=2 python distributed-training-on-supercomputer-with-pytorch-lightning/src/pytorch_mnist_lightning.py --num_nodes 2 --devices 2
+(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=2 python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2 --devices 2
 ```
 - to run on the two nodes with 1 GPU each
 ```
-(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=1 python distributed-training-on-supercomputer-using-lightning/src/pytorch_mnist_lightning.py --num_nodes 2 --devices 1
-(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=1 python distributed-training-on-supercomputer-using-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2 --devices 1
+(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=1 python distributed-training-on-supercomputer-with-pytorch-lightning/src/pytorch_mnist_lightning.py --num_nodes 2 --devices 1
+(lightning) [gpu32]$ srun -N 2 --ntasks-per-node=1 python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2 --devices 1
 ```
 - to run one node with 4 GPUs
 ```
-(lightning) [gpu32]$ python distributed-training-on-supercomputer-using-lightning/src/pytorch_mnist_lightning.py
-(lightning) [gpu32]$ python distributed-training-on-supercomputer-using-lightning/src/pt_bert_nsmc_lightning.py
-(lightning) [gpu32]$ srun -N 1 --ntasks-per-node=4 python distributed-training-on-supercomputer-using-lightning/src/pt_bert_nsmc_lightning.py
+(lightning) [gpu32]$ python distributed-training-on-supercomputer-with-pytorch-lightning/src/pytorch_mnist_lightning.py
+(lightning) [gpu32]$ python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py
+(lightning) [gpu32]$ srun -N 1 --ntasks-per-node=4 python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py
 ```
 - to run one node with 2 GPUs
 ```
-(lightning) [gpu32]$ python distributed-training-with-pytorch-lightning/src/pytorch_mnist_lightning.py --devices 2
-(lightning) [gpu32]$ python distributed-training-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --devices 2
-(lightning) [gpu32]$ srun -N 1 --ntasks-per-node=2 python distributed-training-on-supercomputer-using-lightning/src/pt_bert_nsmc_lightning.py --devices 2
+(lightning) [gpu32]$ python distributed-training-on-supercomputer-with-pytorch-lightning/src/pytorch_mnist_lightning.py --devices 2
+(lightning) [gpu32]$ python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --devices 2
+(lightning) [gpu32]$ srun -N 1 --ntasks-per-node=2 python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --devices 2
 ```
 
 
