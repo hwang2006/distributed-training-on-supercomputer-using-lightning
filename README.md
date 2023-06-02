@@ -258,7 +258,8 @@ Password or token: $USER    # your account ID on Neuron
 
 ## Pytorch Lightning Examples on Jupyter
 Now, you are ready to run a pytorch lightning code on a jupyter notebook. Hopefully, the jupyter notebook examples would lead to getting familiarized yourself to the basics of pytorch lightning coding practices step-by-step. Please refer to the [notebooks](https://github.com/hwang2006/distributed-training-with-pytorch-lightning/tree/main/notebooks) directory for example codes.
-* [Link to Jupyter Notebook Examples](https://nbviewer.org/github/hwang2006/distributed-training-with-pytorch-lightning/blob/main/notebooks/pytorch_lightning_example.ipynb)
+* [Pytorch Lightning Simple Example](https://nbviewer.org/github/hwang2006/distributed-training-with-pytorch-lightning/blob/main/notebooks/pytorch_lightning_example.ipynb)
+* [Fine-tunning a pretrained BERT model for Sentiment Classification](https://nbviewer.org/github/hwang2006/distributed-training-with-pytorch-lightning/blob/main/notebooks/pt_bert_nsmc_lightning.ipynb)
 
 ## Running Pytorch Lightning on SLURM
 We will show how to run a simple pytorch lightning code on multiple nodes interactively.
