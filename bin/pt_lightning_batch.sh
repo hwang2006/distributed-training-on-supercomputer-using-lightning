@@ -15,4 +15,4 @@ source ~/.bashrc
 conda activate lightning
 
 # The num_nodes argument should be specified to be the same number as in the #SBATCH --nodes=xxx  
-srun python /scratch/qualis/git-projects/distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2 
+srun python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2 
