@@ -31,8 +31,8 @@ class Arg:
     report_cycle: int = 100  # Report (Train Metrics) Cycle
     train_data_path: str = "nsmc/ratings_train.txt"  # Train Dataset file 
     val_data_path: str = "nsmc/ratings_test.txt"  # Validation Dataset file 
-    #cpu_workers: int = os.cpu_count()  # Multi cpu workers
-    cpu_workers: int = 8  # Multi cpu workers
+    cpu_workers: int = os.cpu_count()  # Multi cpu workers
+    #cpu_workers: int = 8  # Multi cpu workers
     test_mode: bool = False  # Test Mode enables `fast_dev_run`
     optimizer: str = 'AdamW'  # AdamW vs AdamP
     lr_scheduler: str = 'exp'  # ExponentialLR vs CosineAnnealingWarmRestarts
@@ -44,6 +44,7 @@ args = Arg()
 # args.tpu_cores = 8  # Enables TPU
 args.fp16 = True  # Enables GPU FP16
 args.batch_size = 16  # Force setup batch_size
+args.cpu_workers = 8  # Force setup cpu_workers
 
 class Model(LightningModule):
     def __init__(self, options):
