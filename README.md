@@ -309,6 +309,48 @@ salloc: Nodes gpu[32-33] are ready for job
 (lightning) [gpu32]$ python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --devices 2
 (lightning) [gpu32]$ srun -N 1 --ntasks-per-node=2 python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --devices 2
 ```
+Now, you are ready to run a pytorch lightning batch job.
+1. edit a batch job script running on 2 nodes with 8 GPUs each:
+```
+[glogin01]$ cat pt_lightning_batch.sh
+#!/bin/sh
+#SBATCH -J pytorch_lightning # job name
+#SBATCH --time=24:00:00 # walltime
+#SBATCH --comment=pytorch # application name
+#SBATCH -p amd_a100nv_8 # partition name (queue or class)
+#SBATCH --nodes=2 # the number of nodes
+#SBATCH --ntasks-per-node=8 # number of tasks per node
+#SBATCH --gres=gpu:8 # number of GPUs per node
+#SBATCH --cpus-per-task=4 # number of cpus per task
+#SBATCH -o %x_%j.out
+#SBATCH -e %x_%j.err
+
+module load gcc/10.2.0 cuda/11.7
+source ~/.bashrc
+conda activate lightning
+
+# The num_nodes argument should be specified to be the same number as in the #SBATCH --nodes=xxx
+srun python /scratch/qualis/git-projects/distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2
+```
+2. submit and execute the batch job:
+```
+[glogin01]$ sbatch pt_lightning_batch.sh
+Submitted batch job 169608
+```
+3. check & monitor the batch job status:
+```
+[glogin01]$ squeue -u $USER
+             JOBID       PARTITION     NAME     USER    STATE       TIME TIME_LIMI  NODES NODELIST(REASON)
+            169608    amd_a100nv_8   python   qualis  PENDING       0:00 1-00:00:00      2 (Resources)
+[glogin01]$ squeue -u $USER
+             JOBID       PARTITION     NAME     USER    STATE       TIME TIME_LIMI  NODES NODELIST(REASON)
+            169616    amd_a100nv_8   python   qualis  RUNNING       1:01 1-00:00:00      2 gpu[32,34]
+```
+4. check the standard output & error files of the batch job:
+```
+[glogin01]$ cat pytorch_lightning_169608.out
+[glogin01]$ cat pytorch_lightning_169608.err
+```
 
 ## Reference
 * [Distributed training with Pytorch Lightning on NERSC perlmulter supercomputer in LBNL](https://github.com/hwang2006/distributed-training-on-perlmutter-with-pytorch-lightning)
