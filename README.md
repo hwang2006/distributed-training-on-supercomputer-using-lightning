@@ -330,6 +330,7 @@ source ~/.bashrc
 conda activate lightning
 
 # The num_nodes argument should be specified to be the same number as in the #SBATCH --nodes=xxx
+# srun python pt_bert_nsmc_lightning.py --num_nodes 2
 srun python distributed-training-on-supercomputer-with-pytorch-lightning/src/pt_bert_nsmc_lightning.py --num_nodes 2
 ```
 2. submit and execute the batch job:
@@ -350,6 +351,10 @@ Submitted batch job 169608
 ```
 [glogin01]$ cat pytorch_lightning_169608.out
 [glogin01]$ cat pytorch_lightning_169608.err
+```
+5. For some reason, you may want to stop or kill the batch job.
+```
+[glogin01]$ scancel 169608
 ```
 
 ## Reference
