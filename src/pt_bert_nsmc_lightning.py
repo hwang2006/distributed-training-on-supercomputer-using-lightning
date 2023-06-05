@@ -237,6 +237,8 @@ class Model(LightningModule):
 def main(cliargs):
     print("Using PyTorch Ver", torch.__version__)
     print("Fix Seed:", args.random_seed)
+    print("Cliargs: ", cliargs)
+
     seed_everything(args.random_seed)
     model = Model(args)
 
@@ -267,11 +269,15 @@ if __name__ ==  '__main__':
     parser = ArgumentParser()
     parser.add_argument("--accelerator", default="gpu" if torch.cuda.is_available() else "auto")
     #parser.add_argument("--accelerator", default="gpu" if torch.cuda.is_available() else "cpu")
-    parser.add_argument("--devices", default=torch.cuda.device_count() if torch.cuda.is_available() else 1)
+    parser.add_argument("--devices", default=torch.cuda.device_count() if torch.cuda.is_available() else None)
     #parser.add_argument("--strategy", default="ddp" if torch.cuda.is_available() else "auto")
     parser.add_argument("--strategy", default="ddp" if torch.cuda.is_available() else None)
     parser.add_argument("--num_nodes", default=1)
+
     cliargs = parser.parse_args()
+
+    if os.getenv('SLURM_NTASKS_PER_NODE') is not None:
+       cliargs.devices = os.getenv('SLURM_NTASKS_PER_NODE') # devices to be set to the slurm argument 
 
     main(cliargs)
 
