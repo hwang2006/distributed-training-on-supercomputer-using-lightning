@@ -43,7 +43,8 @@ args = Arg()
 
 # args.tpu_cores = 8  # Enables TPU
 args.fp16 = True  # Enables GPU FP16
-args.batch_size = 16  # Force setup batch_size
+#args.batch_size = 256 if torch.cuda.is_available() else 32 # Force setup batch_size
+args.batch_size = 128 if torch.cuda.is_available() else 32 # Force setup batch_size
 args.cpu_workers = 8  # Force setup cpu_workers
 
 class Model(LightningModule):
