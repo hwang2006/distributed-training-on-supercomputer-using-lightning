@@ -41,12 +41,6 @@ class Arg:
 
 args = Arg()
 
-# args.tpu_cores = 8  # Enables TPU
-args.fp16 = True  # Enables GPU FP16
-#args.batch_size = 256 if torch.cuda.is_available() else 32 # Force setup batch_size
-args.batch_size = 128 if torch.cuda.is_available() else 32 # Force setup batch_size
-args.cpu_workers = 8  # Force setup cpu_workers
-
 class Model(LightningModule):
     def __init__(self, options):
         super().__init__()
@@ -235,10 +229,20 @@ class Model(LightningModule):
         )
 
 
+args.epochs = 5
+args.batch_size = 64 if torch.cuda.is_available() else 32 # Force setup batch_size
+#args.batch_size = 256 if torch.cuda.is_available() else 32 # Force setup batch_size
+args.cpu_workers = 8  # Force setup cpu_workers
+args.fp16 = True  # Enables GPU FP16
+# args.tpu_cores = 8  # Enables TPU
+
+#os.environ['TOKENIZERS_PARALLELISM'] = "True"
+
 def main(cliargs):
     print("Using PyTorch Ver", torch.__version__)
     print("Fix Seed:", args.random_seed)
     print("Cliargs: ", cliargs)
+    #print(os.system("env | grep SLURM"))
 
     seed_everything(args.random_seed)
     model = Model(args)
