@@ -129,7 +129,7 @@ module load gcc/10.2.0 cuda/11.7
 ```
 2. create a new conda virtual environment and activate the environment:
 ```
-[glogin01]$ conda create -n lightning
+[glogin01]$ conda create -n lightning python=3.10
 [glogin01]$ conda activate lightning
 ```
 3. install the pytorch and lightning package:
