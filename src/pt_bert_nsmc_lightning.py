@@ -19,6 +19,10 @@ import re
 import emoji
 from soynlp.normalizer import repeat_normalize
 
+# Download datasets
+if not os.path.exists('./nsmc'):
+    os.system("git clone https://github.com/e9t/nsmc")
+
 class Arg:
     random_seed: int = 42  # Random Seed
     pretrained_model: str = 'beomi/kcbert-large'  # Transformers PLM name
@@ -229,11 +233,11 @@ class Model(LightningModule):
         )
 
 
-args.epochs = 5
+args.epochs = 3
 args.batch_size = 64 if torch.cuda.is_available() else 32 # Force setup batch_size
 #args.batch_size = 256 if torch.cuda.is_available() else 32 # Force setup batch_size
 args.cpu_workers = 8  # Force setup cpu_workers
-args.fp16 = True  # Enables GPU FP16
+#args.fp16 = True  # Enables GPU FP16
 # args.tpu_cores = 8  # Enables TPU
 
 #os.environ['TOKENIZERS_PARALLELISM'] = "True"
