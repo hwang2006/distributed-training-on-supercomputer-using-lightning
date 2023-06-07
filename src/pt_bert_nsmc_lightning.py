@@ -89,6 +89,7 @@ class Model(LightningModule):
         }
         if (batch_idx % self.args.report_cycle) == 0:
             print()
+            print(f'[Epoch {self.trainer.current_epoch} Steps: {batch_idx}]:')
             pprint(tensorboard_logs)
         return {'loss': loss, 'log': tensorboard_logs}
 
@@ -237,7 +238,7 @@ args.epochs = 3
 args.batch_size = 64 if torch.cuda.is_available() else 32 # Force setup batch_size
 #args.batch_size = 256 if torch.cuda.is_available() else 32 # Force setup batch_size
 args.cpu_workers = 8  # Force setup cpu_workers
-#args.fp16 = True  # Enables GPU FP16
+args.fp16 = True  # Enables GPU FP16
 # args.tpu_cores = 8  # Enables TPU
 
 #os.environ['TOKENIZERS_PARALLELISM'] = "True"
