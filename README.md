@@ -358,7 +358,7 @@ Submitted batch job 169608
 ```
 
 ## Reference
-* [Distributed training with Pytorch Lightning on NERSC Perlmulter supercomputer in LBNL](https://github.com/hwang2006/distributed-training-on-perlmutter-with-pytorch-lightning)
+* [Distributed training with Pytorch Lightning on NERSC Perlmutter supercomputer in LBNL](https://github.com/hwang2006/distributed-training-on-perlmutter-with-pytorch-lightning)
 
 
 
