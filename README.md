@@ -122,7 +122,7 @@ conda 4.12.0
 ```
 
 ## Installing Pytorch Lightning
-Now you are ready to build Horovod as a conda virtual environment: 
+Now you are ready to build a conda "lightning" virtual environment: 
 1. load modules: 
 ```
 module load gcc/10.2.0 cuda/11.7
