@@ -159,7 +159,7 @@ In order to do so, you need to add the horovod-enabled virtual envrionment that 
 ```
 2. install Jupyter on the virtual environment:
 ```
-(lightning) [glogin01]$ conda install jupyter
+(lightning) [glogin01]$ conda install jupyter chardet
 (lightning) [glogin01]$ pip install jupyter-tensorboard
 ```
 3. add the virtual environment as a jupyter kernel:
