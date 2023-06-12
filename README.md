@@ -359,7 +359,7 @@ Submitted batch job 169608
 
 ## Reference
 * [Distributed training with Pytorch Lightning on the NERSC Perlmutter supercomputer in LBNL](https://github.com/hwang2006/distributed-training-on-perlmutter-with-pytorch-lightning)
-* [Distributed NLP Practices on a Supercomputer using Pytorch Lightning]( https://github.com/hwang2006/NLP-practices-on-supercomputer-with-pytorch-lightning)
+* [Distributed Natural Language Processing (NLP) Practices on a Supercomputer using Pytorch Lightning]( https://github.com/hwang2006/NLP-practices-on-supercomputer-with-pytorch-lightning)
 
 
 
